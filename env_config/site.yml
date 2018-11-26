@@ -7,4 +7,4 @@
   remote_user: root 
 
   roles:
-    - add repo 
+    - addrepo 
