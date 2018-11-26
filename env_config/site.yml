@@ -1,0 +1,10 @@
+---
+# This playbook setup env for server 
+#
+
+- name: Setup environment
+  hosts: all
+  remote_user: root 
+
+  roles:
+    - add repo 

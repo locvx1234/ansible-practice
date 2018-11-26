@@ -1,0 +1,10 @@
+---
+# This playbook will add local repository
+
+- name: Add FSoft repository
+  yum_repository:
+    name: PostgreSQL 9.6 $releasever - $basearch
+    baseurl: https://hn-repo.fsoft.com.vn/repository/yum-postgresql/9.6/redhat/rhel-$releasever-$basearch
+    enabled: 1
+    gpgcheck: 0
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-96
