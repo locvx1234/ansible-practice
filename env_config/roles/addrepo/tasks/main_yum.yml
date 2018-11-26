@@ -1,0 +1,43 @@
+---
+# This playbook will add local repository
+
+- name: Add PostgreSQL repository
+  yum_repository:
+    name: Postgresql
+    description: PostgreSQL 9.6 $releasever - $basearch
+    file: postgresql
+    baseurl: https://hn-repo.com.vn/repository/yum-postgresql/9.6/redhat/rhel-$releasever-$basearch
+    enabled: 1
+    gpgcheck: 0
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-96
+
+- name: Add PostgreSQL repository 2
+  yum_repository:
+    name: Postgresql-source
+    description: PostgreSQL 9.6 $releasever - $basearch - Source
+    file: postgresql
+    baseurl: https://hn-repo.com.vn/repository/yum-postgresql/srpms/9.6/redhat/rhel-$releasever-$basearch
+    enabled: 0
+    gpgcheck: 0
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-96
+
+- name: Add PostgreSQL repository 3
+  yum_repository:
+    name: Postgresql-updates-testing
+    description: PostgreSQL 9.6 $releasever - $basearch
+    file: postgresql
+    baseurl: https://hn-repo.com.vn/repository/yum-postgresql/testing/9.6/redhat/rhel-$releasever-$basearch
+    enabled: 0
+    gpgcheck: 0
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-96
+
+- name: Add PostgreSQL repository 4
+  yum_repository:
+    name: Postgresql-source-updates-testing
+    description: PostgreSQL 9.6 $releasever - $basearch - Source
+    file: postgresql
+    failovermethod: priority
+    baseurl: https://hn-repo.com.vn/repository/yum-postgresql/srpms/testing/9.6/redhat/rhel-$releasever-$basearch
+    enabled: 0
+    gpgcheck: 0
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-96

@@ -1,0 +1,12 @@
+[HN-base]
+name=HN-CentOS- - Base
+baseurl=https://hn-repo.com.vn/repository/yum-centos/$releasever/os/$basearch/
+gpgcheck=0
+enabled=1
+
+#released updates
+[HN-updates]
+name=HN-CentOS- - Updates
+baseurl=https://hn-repo.com.vn/repository/yum-centos/$releasever/updates/$basearch/
+gpgcheck=0
+enabled=1
