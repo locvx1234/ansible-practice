@@ -1,5 +1,9 @@
 ---
 # This playbook contains env plays that will be run on all nodes.
 
-- name: Create the repository for HN-Fsoft
-  copy: src=HN-* dest=/etc/yum.repos.d/
+- name: Create the repository for HN-repo
+  copy: src={{ item.src }} dest={{ item.dest }}
+  with_items:
+    - { src: 'HN-local.repo', dest: '/etc/yum.repos.d/HN-local.repo' }
+    - { src: 'HN-nodejs.repo', dest: '/etc/yum.repos.d/HN-nodejs.repo' }
+
