@@ -1,6 +1,18 @@
 ---
 # This playbook contains env plays that will be run on all nodes.
 
+- name: Register original repo files
+  find:
+    paths: /etc/yum.repos.d
+    patterns: *.repo
+  register: files_to_delete
+
+- name: Ansible remove original repo files
+  file:
+    path: "{{ item.path }}"
+    state: absent
+  with_items: "{{ files_to_delete.files }}"
+
 - name: Create the repository for HN-repo
   copy: src={{ item.src }} dest={{ item.dest }}
   with_items:
