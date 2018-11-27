@@ -4,7 +4,7 @@
 - name: Register original repo files
   find:
     paths: /etc/yum.repos.d
-    patterns: *.repo
+    patterns: "*.repo"
   register: files_to_delete
 
 - name: Ansible remove original repo files
@@ -18,4 +18,5 @@
   with_items:
     - { src: 'HN-local.repo', dest: '/etc/yum.repos.d/HN-local.repo' }
     - { src: 'HN-nodejs.repo', dest: '/etc/yum.repos.d/HN-nodejs.repo' }
+
 
