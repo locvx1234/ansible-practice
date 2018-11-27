@@ -1,0 +1,12 @@
+---
+# This playbook setup env for server 
+#
+
+- name: Install MariaDB
+  hosts: dbservers
+  remote_user: locvu
+  become: yes 
+  become_method: sudo  
+
+  roles:
+    - mariadb 

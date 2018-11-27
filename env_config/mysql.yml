@@ -1,0 +1,12 @@
+---
+# This playbook setup env for server 
+#
+
+- name: Install MySQL (4HN'senv) 
+  hosts: dbservers
+  remote_user: locvu
+  become: yes 
+  become_method: sudo  
+
+  roles:
+    - mysql

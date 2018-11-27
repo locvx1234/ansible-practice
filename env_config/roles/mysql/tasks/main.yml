@@ -1,0 +1,24 @@
+---
+
+- name: Install tools for managing yum repositories
+  yum: name=yum-utils state=present
+
+- name: Disable HN's repos
+  shell: yum-config-manager --disable HN-\*
+
+- name: Enable HN-base
+  shell: yum-config-manager --enable HN-base
+
+- name: Create the repository for HN-mysql
+  copy: 
+    src: 'HN-mysql.repo'
+    dest: '/etc/yum.repos.d/HN-mysql.repo'
+
+- name: Install MySQL Community Server
+  yum: name={{ item }} state=present
+  with_items:
+   - mysql-community-server
+   - MySQL-python
+
+- name: Disable HN's repos
+  shell: yum-config-manager --enable HN-\*

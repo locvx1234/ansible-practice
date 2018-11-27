@@ -1,0 +1,59 @@
+[root@SVT00005837 yum.repos.d]# cat FHN-MySQL.repo
+
+#https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/
+# Enable to use MySQL 5.5
+[FPT-mysql55-community]
+name=MySQL 5.5 Community Server
+baseurl=https://hn-repo.fsoft.com.vn/repository/yum-mysql/yum/mysql-5.5-community/el/$releasever/$basearch/
+enabled=1
+gpgcheck=0
+
+# Enable to use MySQL 5.6
+[FPT-mysql56-community]
+name=MySQL 5.6 Community Server
+baseurl=https://hn-repo.fsoft.com.vn/repository/yum-mysql/yum/mysql-5.6-community/el/$releasever/$basearch/
+enabled=1
+gpgcheck=0
+
+# Enable to use MySQL 5.7
+[FPT-mysql57-community]
+name=MySQL 5.7 Community Server
+baseurl=https://hn-repo.fsoft.com.vn/repository/yum-mysql/yum/mysql-5.7-community/el/$releasever/$basearch/
+enabled=1
+gpgcheck=0
+
+[FPT-mysql80-community]
+name=MySQL 8.0 Community Server
+baseurl=https://hn-repo.fsoft.com.vn/repository/yum-mysql/yum/mysql-8.0-community/el/$releasever/$basearch/
+enabled=1
+gpgcheck=0
+
+[FPT-mysql80-mysql-cluster-7.6-community]
+name=MySQL cluster 7.6 community
+baseurl=https://hn-repo.fsoft.com.vn/repository/yum-mysql/yum/mysql-cluster-7.6-community/el/$releasever/$basearch/
+enabled=1
+gpgcheck=0
+
+[FPT-mysql-cluster-7.5-community]
+name=MySQL Cluster 7.5 Community
+baseurl=https://hn-repo.fsoft.com.vn/repository/yum-mysql/yum/mysql-cluster-7.5-community/el/7/$basearch/
+enabled=1
+gpgcheck=0
+
+[FPT-mysql-connectors-community]
+name=MySQL Connectors Community
+baseurl=https://hn-repo.fsoft.com.vn/repository/yum-mysql/yum/mysql-connectors-community/el/$releasever/$basearch/
+enabled=1
+gpgcheck=0
+
+[FPT-mysql-tools-community]
+name=MySQL Tools Community
+baseurl=https://hn-repo.fsoft.com.vn/repository/yum-mysql/yum/mysql-tools-community/el/$releasever/$basearch/
+enabled=1
+gpgcheck=0
+
+[FPT-mysql-tools-preview]
+name=MySQL Tools Preview
+baseurl=https://hn-repo.fsoft.com.vn/repository/yum-mysql/yum/mysql-tools-preview/el/7/$basearch/
+enabled=1
+gpgcheck=0
