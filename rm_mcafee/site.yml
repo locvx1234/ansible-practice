@@ -1,0 +1,10 @@
+---
+# This playbook remove McAfee and Isec 
+#
+
+- name: Remove McAfee   
+  hosts: blackduck_server
+  remote_user: root 
+
+  roles:
+    - McAfee
