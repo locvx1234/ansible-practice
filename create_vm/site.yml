@@ -1,0 +1,9 @@
+---
+# This playbook create new VM
+
+- name: Create new VM
+  hosts: KVM
+  remote_user: root 
+
+  roles:
+    - Vagrant

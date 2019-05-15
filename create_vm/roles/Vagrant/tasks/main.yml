@@ -1,0 +1,17 @@
+---
+- name: Create Vagranfile
+
+- name: Make directory contain Vagrantfile
+  file:
+    path: /tmp/{{VM_NAME}}
+    state: directory
+
+- name: Upload Vagrantfile
+  copy:
+    src: path_to_vagrantfile
+    dest: /tmp/{{VM_NAME}}
+
+- name: Create VM 
+  shell: |
+    cd /tmp/{{VM_NAME}}
+    vagrant up

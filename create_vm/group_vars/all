@@ -1,0 +1,15 @@
+---
+# 
+vm_name: test
+account: locvx
+
+# Config resource 
+memory: 2048
+cpus: 2
+disk: 50
+
+# ip_address:
+hostname: localhost
+
+# Publicly available Vagrant box, refer https://app.vagrantup.com/boxes/search?provider=libvirt
+box: centos/7
