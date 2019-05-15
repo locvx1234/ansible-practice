@@ -4,7 +4,7 @@
 
 - name: Remove McAfee   
   hosts: blackduck_server
-  remote_user: root 
+  become: true
 
   roles:
     - McAfee
