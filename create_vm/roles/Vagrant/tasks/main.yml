@@ -5,9 +5,9 @@
     state: directory
 
 - name: Upload Vagrantfile
-  copy:
+  template:
     src: ./Vagrantfile.j2
-    dest: /tmp/{{ vm_name }}
+    dest: /tmp/{{ vm_name }}/Vagrantfile
 
 - name: Create VM 
   shell: |
