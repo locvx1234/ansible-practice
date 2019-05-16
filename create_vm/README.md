@@ -15,3 +15,8 @@ Then run following command:
 ```
 ansible-playbook -i hosts sites.yml
 ```
+
+### Info
+
+- Box : `centos/7`
+- User/pass : `vagrant/vagrant`
