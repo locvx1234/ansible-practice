@@ -9,8 +9,8 @@ Vagrant.configure("2") do |config|
       :dev => "br0",
       :mode => "bridge",
       :type => "bridge",
-      {% if ip_address %}
-      :ip => "172.27.100.163"
+      {% if ip_address is defined %}
+      :ip => "{{ ip_address }}"
       {% endif %}
 
   config.vm.define :{{ account }} do |{{ account }}|
@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
       domain.cpus = {{ cpus }}
       #domain.nested = true
       #domain.volume_cache = 'none'
-      domain.machine_virtual_size = 50
+      domain.machine_virtual_size = {{ disk }}
     end
   end
 
