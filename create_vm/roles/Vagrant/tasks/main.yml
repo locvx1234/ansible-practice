@@ -1,17 +1,15 @@
 ---
-- name: Create Vagranfile
-
 - name: Make directory contain Vagrantfile
   file:
-    path: /tmp/{{VM_NAME}}
+    path: /tmp/{{ vm_name }}
     state: directory
 
 - name: Upload Vagrantfile
   copy:
-    src: path_to_vagrantfile
-    dest: /tmp/{{VM_NAME}}
+    src: ./Vagrantfile.j2
+    dest: /tmp/{{ vm_name }}
 
 - name: Create VM 
   shell: |
-    cd /tmp/{{VM_NAME}}
+    cd /tmp/{{ vm_name }}
     vagrant up
