@@ -8,10 +8,12 @@ Vagrant.configure("2") do |config|
   config.vm.network :public_network,
       :dev => "br0",
       :mode => "bridge",
+    {% if ip_address is defined %}
       :type => "bridge",
-      {% if ip_address is defined %}
       :ip => "{{ ip_address }}"
-      {% endif %}
+    {% else %}
+      :type => "bridge"
+    {% endif %}
 
   config.vm.define :{{ account }} do |{{ account }}|
     {{ account }}.vm.box = "{{ box }}"
