@@ -13,7 +13,7 @@ Select Physical Server to host VM in `./hosts`
 Then run following command: 
 
 ```
-ansible-playbook -i hosts sites.yml
+ansible-playbook -i hosts site.yml
 ```
 
 ### Info
